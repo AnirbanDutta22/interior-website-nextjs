@@ -4,6 +4,7 @@ import Image from "next/image";
 import who_we from "../../public/assets/images/who_we.jpg";
 import stats from "../../public/data/stats.json";
 import Button from "@/components/Button";
+import RecentWorks from "@/components/works/RecentWorks";
 
 export default function Home() {
   return (
@@ -11,9 +12,7 @@ export default function Home() {
       <Hero />
       {/* who we are */}
       <section className="relative w-[80vw] h-auto mx-auto my-10">
-        <h2 className="text-xl sm:text-2xl text-center uppercase text-red-500">
-          who we are
-        </h2>
+        <h2 className="sectionHeading">who we are</h2>
         <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-x-10 p-6 mt-6">
           <Image
             src={who_we}
@@ -39,7 +38,7 @@ export default function Home() {
           </div>
         </div>
         {/* stats */}
-        <div className="w-full h-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-7 p-6 mt-7 md:mt-10">
+        <div className="w-full h-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-7 p-6 mt-16 md:my-36">
           {stats.map((stat, index) => (
             <div
               key={index}
@@ -55,6 +54,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <RecentWorks />
     </>
   );
 }

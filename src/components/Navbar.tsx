@@ -20,8 +20,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`bg-transparent backdrop-blur-sm backdrop-brightness-[.98] fixed top-0 ${
-        isFixedNav && "bg-primary-bg shadow-md"
+      className={`backdrop-blur-sm backdrop-brightness-[.98] fixed top-0 ${
+        isFixedNav ? "bg-primary-bg shadow-md" : "bg-transparent"
       } w-full z-20 start-0`}
     >
       <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">

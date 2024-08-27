@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .sectionHeading {
+    @apply text-xl sm:text-2xl text-center uppercase text-red-500;
+  }
+}
