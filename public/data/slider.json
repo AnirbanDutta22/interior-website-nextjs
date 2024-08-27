@@ -1,30 +1,32 @@
 [
   {
     "id": 1,
-    "title": "Photography",
-    "body": "Bootstrap Carousel Example",
-    "imageUrl": "/assets/images/heroImg.jpg",
-    "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
+    "head": "Elevate Your Living Experience",
+    "sub_head": "Where Modern Design Meets Timeless Elegance",
+    "sub_head_color": "text-yellow-950",
+    "paragraph": "Transform your home into a masterpiece of design and comfort. Our expert team curates modern interiors that combine cutting-edge style with enduring beauty. Explore our collections and find the perfect elements to create a space that is uniquely yours.",
+    "button_title": "Explore",
+    "button_color": "bg-yellow-950",
+    "img_url": "../assets/images/heroImg.jpg"
   },
   {
     "id": 2,
-    "title": "City Views",
-    "body": "Bootstrap Carousel Example",
-    "imageUrl": "/assets/images/heroImg2.jpg",
-    "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
+    "head": "Create Your Perfect Haven",
+    "sub_head": "Warmth, Comfort, and Style in Every Corner",
+    "sub_head_color": "text-yellow-200",
+    "paragraph": "At [Your Brand], we believe that every home should be a sanctuary. Our designs focus on creating cozy, inviting spaces where you can unwind and feel at home. Let us help you design a space that reflects your personality and brings comfort to your daily life.",
+    "button_title": "Discover More",
+    "button_color": "bg-yellow-200",
+    "img_url": "../assets/images/heroImg2.jpg"
   },
   {
     "id": 3,
-    "title": "Wild Life",
-    "body": "Bootstrap Carousel Example",
-    "imageUrl": "/assets/images/heroImg.jpg",
-    "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
-  },
-  {
-    "id": 4,
-    "title": "Foods and Culture",
-    "body": "Bootstrap Carousel Example",
-    "imageUrl": "/assets/images/heroImg2.jpg",
-    "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
+    "head": "Redefine Luxury Living",
+    "sub_head": "Exceptional Interiors for the Discerning Homeowner",
+    "sub_head_color": "text-primary-btn",
+    "paragraph": "Indulge in the art of luxury with our exclusive interior designs. From opulent furnishings to sophisticated decor, our designs are tailored to meet the highest standards of elegance and style. Experience the pinnacle of refined living and make your home a statement of sophistication.",
+    "button_title": "View Our Designs",
+    "button_color": "",
+    "img_url": "../assets/images/heroImg3.jpg"
   }
 ]

@@ -30,7 +30,7 @@ export default function CarouselContainer({
 
   useEffect(() => {
     const handleIntervalFunction = () => {
-      dispatch(nextSlide());
+      // dispatch(nextSlide());
     };
 
     const timeoutId = setInterval(handleIntervalFunction, 4000);
@@ -40,7 +40,7 @@ export default function CarouselContainer({
   }, []); // Empty dependency array means this runs once on mount
 
   return (
-    <section className="slider-container relative max-w-[100%] h-[20rem] sm:h-[28rem] lg:h-[100vh] overflow-hidden">
+    <section className="slider-container relative max-w-[100%] h-[35rem] sm:h-[45rem] lg:h-[100vh] overflow-hidden">
       {children}
       <DefaultArrows
         onRightHandleClick={() => dispatch(nextSlide())}

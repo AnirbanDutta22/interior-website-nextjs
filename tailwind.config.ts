@@ -19,6 +19,10 @@ const config: Config = {
         "primary-btn": "#4682B4",
         "secondary-btn": "#4682B4",
       },
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+        lora: ["Lora", "serif"],
+      },
     },
   },
   plugins: [],
