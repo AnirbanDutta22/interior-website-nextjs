@@ -3,14 +3,17 @@ import Image from "next/image";
 
 import who_we from "../../public/assets/images/who_we.jpg";
 import stats from "../../public/data/stats.json";
+import reasons from "../../public/data/reasons.json";
 import Button from "@/components/Button";
 import RecentWorks from "@/components/works/RecentWorks";
+import WorksCategory from "@/components/works/WorksCategory";
 
 export default function Home() {
   return (
     <>
+      {/* Hero section */}
       <Hero />
-      {/* who we are */}
+      {/* who we are section */}
       <section className="relative w-[80vw] h-auto mx-auto my-10">
         <h2 className="sectionHeading">who we are</h2>
         <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-x-10 p-6 mt-6">
@@ -54,7 +57,39 @@ export default function Home() {
           ))}
         </div>
       </section>
+      {/* recent works section */}
       <RecentWorks />
+      {/* categories of home interior */}
+      <WorksCategory />
+      {/* why to choose */}
+      <section className="relative w-[100vw] h-auto mx-auto bg-primary-btn py-10 md:py-20">
+        <h2 className="text-center text-3xl sm:text-4xl lg:text-6xl font-lora text-primary-bg capitalize">
+          why to choose us
+        </h2>
+        <p className="w-3/4 md:w-1/2 mt-4 mx-auto text-center text-md sm:text-lg lg:text-xl text-primary-bg">
+          Choose us for unparalleled design expertise, personalized service, and
+          innovative solutions that transform your vision into reality. Our
+          commitment to quality and attention to detail ensures a perfect home
+          makeover.
+        </p>
+        <div className="w-full lg:w-1/2 mx-auto flex flex-wrap justify-center items-center font-semibold capitalize text-lg sm:text-xl lg:text-2xl">
+          {reasons.map((reason, index) => (
+            <div
+              key={index}
+              className="flex flex-col justify-center items-center gap-y-3 sm:gap-y-5 p-7 sm:p-10 text-center"
+            >
+              <Image
+                src={reason.img_url}
+                alt="icons"
+                width={100}
+                height={100}
+                className="size-[2.5rem] sm:size-[3.5rem] md:size-[5rem]"
+              />
+              {reason.text}
+            </div>
+          ))}
+        </div>
+      </section>
     </>
   );
 }
