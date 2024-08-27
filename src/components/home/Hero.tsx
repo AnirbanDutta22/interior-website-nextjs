@@ -45,7 +45,7 @@ const Hero = () => {
         <FaPhone className="text-gray-500 cursor-pointer" />
       </div>
       {/*sticky help button */}
-      <div className="fixed top-[95%] translate-y-[-95%] right-36 bg-primary-btn text-primary-bg shadow-lg rounded-md cursor-pointer p-5 text-3xl">
+      <div className="fixed top-[98%] translate-y-[-98%] right-5 bg-primary-btn text-primary-bg shadow-lg rounded-md cursor-pointer p-4 text-3xl">
         <FaRocketchat />
       </div>
     </div>
