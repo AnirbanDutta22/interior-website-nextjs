@@ -40,7 +40,7 @@ const Hero = () => {
         ))}
       </CarouselContainer>
       {/* fixed contact button */}
-      <div className="fixed top-[80%] translate-y-[-80%] right-0 z-20 flex flex-col gap-y-6 p-5 text-3xl bg-primary-bg shadow-md text-black">
+      <div className="fixed top-[80%] translate-y-[-80%] right-0 z-20 flex flex-col gap-y-6 p-5 text-3xl bg-slate-100 shadow-md text-black">
         <FaWhatsapp className="text-green-500 cursor-pointer" />
         <FaPhone className="text-gray-500 cursor-pointer" />
       </div>

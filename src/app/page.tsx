@@ -2,11 +2,13 @@ import Hero from "@/components/home/Hero";
 import Image from "next/image";
 
 import who_we from "../../public/assets/images/who_we.jpg";
+import map from "../../public/assets/images/map.png";
 import stats from "../../public/data/stats.json";
 import reasons from "../../public/data/reasons.json";
 import Button from "@/components/Button";
 import RecentWorks from "@/components/works/RecentWorks";
 import WorksCategory from "@/components/works/WorksCategory";
+import WorkProcess from "@/components/works/WorkProcess";
 
 export default function Home() {
   return (
@@ -46,7 +48,8 @@ export default function Home() {
             <div
               key={index}
               className={`${
-                stat.title === "experience" && "scale-110 md:scale-150"
+                stat.title === "experience" &&
+                "scale-110 md:scale-150 mx-0 md:mx-4 px-3 py-2 shadow-amber-400 shadow-2xl"
               } text-center capitalize`}
             >
               <span className={`text-3xl sm:text-4xl font-bold`}>
@@ -89,6 +92,36 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+      {/* how we work section */}
+      <section className="relative w-[100vw] h-auto mx-auto">
+        <div
+          style={{
+            backgroundImage: `linear-gradient(90deg,rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6),rgba(0,0,0,0.6)),url(${map.src})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            height: "16rem",
+            backgroundPosition: "fixed",
+          }}
+          className="px-3 sm:px-4 lg:px-6 flex flex-col justify-center items-center capitalize font-montserrat text-primary-bg"
+        >
+          <div className="w-full text-center flex justify-evenly items-center text-xl sm:text-2xl lg:text-3xl font-semibold">
+            <h1>
+              আপনার স্বপ্ন, <br />
+              আমাদের গ্যারান্টি
+            </h1>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl">
+              your dream, <br />
+              our promise
+            </h1>
+            <h1>
+              তোমাৰ সপোন,
+              <br /> আমাৰ প্ৰতিশ্ৰুতি
+            </h1>
+          </div>
+          <Button title="contact now" className="w-[10rem] mt-6 sm:mt-8" />
+        </div>
+        <WorkProcess />
       </section>
     </>
   );

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "01",
+    "heading": "Initial Consultation",
+    "text": "We start with a consultation to understand your vision, needs, and style. This sets the foundation for a design tailored to your preferences and goals.",
+    "images": ["/assets/images/heroImg.jpg", "/assets/images/heroImg2.jpg"]
+  },
+  {
+    "id": "02",
+    "heading": "Concept Development",
+    "text": "We develop design concepts, including mood boards and layout options, to bring your vision to life. This phase refines your ideas into a cohesive plan.",
+    "images": ["/assets/images/heroImg3.jpg", "/assets/images/works1.jpg"]
+  },
+  {
+    "id": "03",
+    "heading": "Design Execution",
+    "text": "Our team implements the design, coordinating with contractors and suppliers to bring your space to life. We manage every detail to ensure your project’s success.",
+    "images": ["/assets/images/works5.jpeg"]
+  },
+  {
+    "id": "04",
+    "heading": "Final Review and Support",
+    "text": "After completion, we conduct a final walkthrough to ensure everything meets your expectations. We offer ongoing support for any adjustments or additional needs",
+    "images": ["/assets/images/heroImg2.jpg", "/assets/images/works8.jpg"]
+  }
+]
