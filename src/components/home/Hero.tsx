@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <div className="relative w-full h-[35rem] sm:h-[45rem] lg:h-[100vh]">
       {/* carousel slider  */}
-      <CarouselContainer>
+      <CarouselContainer arrowsVisible indicatorsVisible autoplay={false}>
         {slides.map((slide, index) => (
           <SliderDiv key={index} index={index}>
             <div

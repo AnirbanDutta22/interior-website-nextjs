@@ -14,8 +14,16 @@ import {
 import { RootState } from "@/app/redux/store";
 
 export default function CarouselContainer({
+  arrowsVisible,
+  indicatorsVisible,
+  autoplay,
+  className,
   children,
 }: {
+  className?: string;
+  autoplay?: boolean;
+  arrowsVisible?: boolean;
+  indicatorsVisible?: boolean;
   children?: React.ReactNode;
 }) {
   const dispatch = useDispatch();
@@ -30,27 +38,30 @@ export default function CarouselContainer({
 
   useEffect(() => {
     const handleIntervalFunction = () => {
-      // dispatch(nextSlide());
+      // autoplay && dispatch(nextSlide());
     };
-
     const timeoutId = setInterval(handleIntervalFunction, 4000);
-
-    // Cleanup function to clear timeout if the component unmounts
     return () => clearInterval(timeoutId);
   }, []); // Empty dependency array means this runs once on mount
 
   return (
-    <section className="slider-container relative max-w-[100%] h-[35rem] sm:h-[45rem] lg:h-[100vh] overflow-hidden">
+    <section
+      className={`slider-container relative max-w-[100%] h-[85%] lg:h-[100%] overflow-hidden ${className}`}
+    >
       {children}
-      <DefaultArrows
-        onRightHandleClick={() => dispatch(nextSlide())}
-        onLeftHandleClick={() => dispatch(prevSlide())}
-      />
-      <DefaultIndicators
-        slides={totalSlides}
-        slideNo={slideNo}
-        onIndicatorClick={(index) => dispatch(jumpToSlide(index))}
-      />
+      {arrowsVisible && (
+        <DefaultArrows
+          onRightHandleClick={() => dispatch(nextSlide())}
+          onLeftHandleClick={() => dispatch(prevSlide())}
+        />
+      )}
+      {indicatorsVisible && (
+        <DefaultIndicators
+          slides={totalSlides}
+          slideNo={slideNo}
+          onIndicatorClick={(index) => dispatch(jumpToSlide(index))}
+        />
+      )}
     </section>
   );
 }

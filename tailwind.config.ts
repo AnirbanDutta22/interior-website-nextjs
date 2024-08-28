@@ -22,6 +22,7 @@ const config: Config = {
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
         lora: ["Lora", "serif"],
+        grot: ["Space Grotesk", "sans-serif"],
       },
     },
   },

@@ -9,6 +9,7 @@ import Button from "@/components/Button";
 import RecentWorks from "@/components/works/RecentWorks";
 import WorksCategory from "@/components/works/WorksCategory";
 import WorkProcess from "@/components/works/WorkProcess";
+import Review from "@/components/home/Review";
 
 export default function Home() {
   return (
@@ -122,6 +123,7 @@ export default function Home() {
           <Button title="contact now" className="w-[10rem] mt-6 sm:mt-8" />
         </div>
         <WorkProcess />
+        <Review />
       </section>
     </>
   );

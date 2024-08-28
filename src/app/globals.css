@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2??family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,5 +7,8 @@
 @layer components {
   .sectionHeading {
     @apply text-xl sm:text-2xl text-center uppercase text-red-500;
+  }
+  .quote {
+    @apply text-3xl lg:text-4xl text-gray-600 font-grot;
   }
 }
