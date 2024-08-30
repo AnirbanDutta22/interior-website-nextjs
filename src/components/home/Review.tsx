@@ -10,7 +10,7 @@ const Review = () => {
       <div className="w-[80%] mx-auto flex flex-col sm:flex-row justify-evenly items-center">
         <div className="w-full sm:w-1/2">
           <h2 className="sectionHeading text-left">reviews</h2>
-          <h1 className="mt-4 text-2xl sm:text-4xl lg:text-6xl font-montserrat capitalize">
+          <h1 className="mt-4 text-3xl sm:text-4xl lg:text-6xl font-montserrat capitalize">
             Over 1000 designs completed for{" "}
             <span className="text-primary-btn font-semibold">
               happy clients.
@@ -18,7 +18,7 @@ const Review = () => {
           </h1>
           <Button2 title="all reviews" className="mt-5 sm:mt-8" />
         </div>
-        <div className="w-full sm:w-2/3 h-[30rem] lg:h-[35rem]">
+        <div className="w-full sm:w-2/3 h-[28rem] lg:h-[35rem]">
           <CarouselContainer
             indicatorsVisible
             autoplay={true}

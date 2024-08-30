@@ -17,6 +17,7 @@ const config: Config = {
         "primary-bg": "#F9F9F9",
         "secondary-bg": "#E1E1E1",
         "primary-btn": "#4682B4",
+        "primary-btn-100": "#3e6e98",
         "secondary-btn": "#4682B4",
       },
       fontFamily: {

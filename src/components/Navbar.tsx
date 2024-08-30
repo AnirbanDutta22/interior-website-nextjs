@@ -3,6 +3,8 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Button, { Button2 } from "./Button";
 
+const navItmes = ["services", "design ideas", "gallery", "about", "contact"];
+
 const Navbar = () => {
   const [isFixedNav, setNavFixed] = useState(false);
 
@@ -24,19 +26,19 @@ const Navbar = () => {
         isFixedNav ? "bg-primary-bg shadow-md" : "bg-transparent"
       } w-full z-20 start-0`}
     >
-      <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-3">
         <Link
           href="#"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <span className="text-sm sm:text-md lg:text-lg font-semibold whitespace-nowrap capitalize text-gray-600">
+          <span className="text-sm sm:text-md lg:text-lg font-semibold whitespace-nowrap capitalize text-gray-400">
             <span className="text-2xl sm:text-3xl lg:text-4xl uppercase tracking-wider font-bold text-red-600">
               Dipankar
             </span>{" "}
             <br /> interior & exterior solutions
           </span>
         </Link>
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <Button2 title="login" className="hidden md:flex" />
           <Button title="free consult now" className="hidden md:flex" />
           <button
@@ -73,31 +75,21 @@ const Navbar = () => {
               isFixedNav ? "text-gray-900" : "text-gray-100"
             } text-xl rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0`}
           >
-            <li>
-              <Link href="#" className="block py-2 px-3" aria-current="page">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="block py-2 px-3">
-                Design ideas
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="block py-2 px-3">
-                Gallery
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="block py-2 px-3">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="block py-2 px-3">
-                Contact
-              </Link>
-            </li>
+            {navItmes.map((item, i) => (
+              <li key={i}>
+                <Link
+                  href="#"
+                  className={`block py-2 px-3 capitalize ${
+                    isFixedNav
+                      ? "hover:text-primary-btn"
+                      : "hover:text-gray-300"
+                  }`}
+                  aria-current="page"
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

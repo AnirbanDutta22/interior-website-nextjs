@@ -10,6 +10,9 @@ import RecentWorks from "@/components/works/RecentWorks";
 import WorksCategory from "@/components/works/WorksCategory";
 import WorkProcess from "@/components/works/WorkProcess";
 import Review from "@/components/home/Review";
+import FAQ from "@/components/FAQ";
+import ComparisonSlider from "@/components/works/ComparisonSlider";
+import BudgetCalculator from "@/components/BudgetCalculator";
 
 export default function Home() {
   return (
@@ -17,7 +20,7 @@ export default function Home() {
       {/* Hero section */}
       <Hero />
       {/* who we are section */}
-      <section className="relative w-[80vw] h-auto mx-auto my-10">
+      <section className="relative w-[90vw] sm:w-[80vw] h-auto mx-auto mt-2 sm:mt-5 md:mt-10 mb-10">
         <h2 className="sectionHeading">who we are</h2>
         <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-x-10 p-6 mt-6">
           <Image
@@ -44,7 +47,7 @@ export default function Home() {
           </div>
         </div>
         {/* stats */}
-        <div className="w-full h-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-7 p-6 mt-16 md:my-36">
+        <div className="w-full h-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-7 p-6 mt-10 md:mt-36 mb-20 md:mb-36">
           {stats.map((stat, index) => (
             <div
               key={index}
@@ -123,8 +126,14 @@ export default function Home() {
           <Button title="contact now" className="w-[10rem] mt-6 sm:mt-8" />
         </div>
         <WorkProcess />
-        <Review />
+        <BudgetCalculator />
       </section>
+      {/* comparison section */}
+      <ComparisonSlider />
+      {/* review section */}
+      <Review />
+      {/* faq section */}
+      <FAQ />
     </>
   );
 }

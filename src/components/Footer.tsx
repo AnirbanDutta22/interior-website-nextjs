@@ -12,8 +12,8 @@ const Footer = () => {
               href="#"
               className="flex items-center space-x-3 rtl:space-x-reverse"
             >
-              <span className="text-lg font-semibold whitespace-nowrap capitalize text-gray-600">
-                <span className="text-4xl uppercase tracking-wider font-bold text-red-600">
+              <span className="text-sm sm:text-md lg:text-lg font-semibold whitespace-nowrap capitalize text-gray-600">
+                <span className="text-2xl sm:text-3xl lg:text-4xl uppercase tracking-wider font-bold text-red-600">
                   Dipankar
                 </span>{" "}
                 <br /> interior & exterior solutions
@@ -28,7 +28,7 @@ const Footer = () => {
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
                   <a href="https://flowbite.com/" className="hover:underline">
-                    Flowbite
+                    Dipankar Interior & Exterior
                   </a>
                 </li>
                 <li>
@@ -51,7 +51,7 @@ const Footer = () => {
                     href="https://github.com/themesberg/flowbite"
                     className="hover:underline "
                   >
-                    Github
+                    Facebook
                   </a>
                 </li>
                 <li>
@@ -59,7 +59,7 @@ const Footer = () => {
                     href="https://discord.gg/4eeurUVvTy"
                     className="hover:underline"
                   >
-                    Discord
+                    Instagram
                   </a>
                 </li>
               </ul>
@@ -86,9 +86,9 @@ const Footer = () => {
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2023{" "}
+            © 2024{" "}
             <a href="https://flowbite.com/" className="hover:underline">
-              Flowbite™
+              Dipankar Interior & Exterior Solutions™
             </a>
             . All Rights Reserved.
           </span>
