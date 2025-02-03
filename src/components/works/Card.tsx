@@ -1,27 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import cardImg from "../../../public/assets/images/heroImg.jpg";
 import { FaArrowRight } from "react-icons/fa6";
 
 const Card = ({
   title,
   description,
   img_url,
+  link,
 }: {
   title?: string;
   description?: string;
   img_url?: string;
+  link?: string;
 }) => {
   return (
     <div className="max-w-sm mx-auto bg-white border border-gray-200 rounded-lg shadow">
-      <Link href="#">
+      <Link href={link || "#"}>
         <div className="relative w-full h-[18rem] sm:h-[24rem] lg:h-[30rem] group">
           <Image
             width={500}
             height={500}
-            src={img_url}
-            alt=""
+            src={img_url || "#"}
+            alt={title || "image"}
             className="rounded-t-lg w-full h-full object-cover"
           />
           <div className="p-3 lg:p-4 absolute bottom-0 bg-gradient-to-t from-gray-900 from-10% via-gray-800 via-30%">
@@ -42,4 +43,9 @@ const Card = ({
   );
 };
 
+const Card2 = ({
+
+})
+
+export {Card2}
 export default Card;

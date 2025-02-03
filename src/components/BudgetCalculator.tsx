@@ -21,7 +21,7 @@ const BudgetCalculator = () => {
           calculate budget for your home interior design by sharing your space
           details. test
         </p>
-        <Button2 title="get estimate" />
+        <Button2 title="get estimate" link="/" />
       </div>
     </div>
   );

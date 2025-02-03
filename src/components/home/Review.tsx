@@ -16,7 +16,11 @@ const Review = () => {
               happy clients.
             </span>
           </h1>
-          <Button2 title="all reviews" className="mt-5 sm:mt-8" />
+          <Button2
+            title="more reviews"
+            link="/reviews"
+            className="mt-5 sm:mt-8"
+          />
         </div>
         <div className="w-full sm:w-2/3 h-[28rem] lg:h-[35rem]">
           <CarouselContainer

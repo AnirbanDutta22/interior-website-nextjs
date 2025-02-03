@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import categories from "../../../public/data/categories.json";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const WorksCategory = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -32,7 +33,8 @@ const WorksCategory = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-6 md:grid-rows-[25rem,25rem,25rem] gap-6 w-[80%] mx-auto">
         {categories.map((cat, index) => (
-          <div
+          <Link
+            href={`/categories/${cat.title.toLowerCase()}`}
             key={index}
             className={`video-container relative ${
               index === 1
@@ -54,7 +56,7 @@ const WorksCategory = () => {
               </h1>
               <FaArrowRight className="mb-2 mx-3 transition-all ease-in-out duration-500 group-hover:translate-x-4" />
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

@@ -5,8 +5,6 @@ import {
   ReactCompareSliderImage,
 } from "react-compare-slider";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import compareImg1 from "../../../public/assets/images/works2.jpeg";
-import compareImg2 from "../../../public/assets/images/works5.jpeg";
 
 const homes = [
   {

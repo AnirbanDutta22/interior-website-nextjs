@@ -39,15 +39,6 @@ const Hero = () => {
           </SliderDiv>
         ))}
       </CarouselContainer>
-      {/* fixed contact button */}
-      <div className="fixed top-[65%] md:top-[80%] translate-y-[-65%] md:translate-y-[-80%] right-0 z-20 flex flex-col gap-y-3 md:gap-y-6 p-3 md:p-5 text-2xl md:text-3xl bg-slate-100 shadow-md text-black">
-        <FaWhatsapp className="text-green-500 cursor-pointer" />
-        <FaPhone className="text-gray-500 cursor-pointer" />
-      </div>
-      {/*sticky help button */}
-      <div className="fixed z-20 top-[98%] translate-y-[-98%] transition-all ease-in-out duration-700 right-5 bg-primary-btn text-primary-bg shadow-lg rounded-md cursor-pointer p-2.5 md:p-4 text-2xl md:text-3xl">
-        <FaRocketchat />
-      </div>
     </div>
   );
 };

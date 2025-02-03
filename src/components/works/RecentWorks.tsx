@@ -2,7 +2,6 @@ import React from "react";
 import Card from "./Card";
 import recentworks from "../../../public/data/recentworks.json";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa6";
 
 const RecentWorks = () => {
   return (
@@ -13,7 +12,7 @@ const RecentWorks = () => {
         <span className="text-primary-btn font-semibold">Recent Projects</span>
       </h1>
       <div className="flex justify-end mb-3 text-xl text-gray-500 hover:text-primary-btn">
-        <Link href="#" className="">
+        <Link href="/projects" className="">
           Explore more {">"}
         </Link>
       </div>
@@ -24,6 +23,7 @@ const RecentWorks = () => {
             title={work.title}
             description={work.description}
             img_url={work.img_url}
+            link="/projects/recent-projects/1"
           />
         ))}
       </div>

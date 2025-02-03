@@ -38,9 +38,9 @@ export default function CarouselContainer({
 
   useEffect(() => {
     const handleIntervalFunction = () => {
-      // autoplay && dispatch(nextSlide());
+      autoplay && dispatch(nextSlide());
     };
-    const timeoutId = setInterval(handleIntervalFunction, 4000);
+    const timeoutId = setInterval(handleIntervalFunction, 5000);
     return () => clearInterval(timeoutId);
   }, []); // Empty dependency array means this runs once on mount
 
