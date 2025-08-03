@@ -1,13 +1,14 @@
 /* eslint-disable react/display-name */
 "use client";
 import Link from "next/link";
-import React, { forwardRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button, { Button2 } from "./Button";
 import { usePathname } from "next/navigation";
 import Input from "./form/Input";
 import { CgCross } from "react-icons/cg";
 import { BiCross } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
+import { submitConsultationForm } from "@/app/_lib/actions";
 
 const navItmes = [
   { item: "services", link: "services" },
@@ -17,9 +18,10 @@ const navItmes = [
   { item: "contact", link: "contact" },
 ];
 
-const Navbar = forwardRef<HTMLElement>((props, ref) => {
+const Navbar = () => {
   const [isFixedNav, setNavFixed] = useState(false);
   const [isQuoteModalOpen, setQuoteModelOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const pathname = usePathname();
 
   const fixNav = () => {
@@ -32,6 +34,20 @@ const Navbar = forwardRef<HTMLElement>((props, ref) => {
 
   const modalOpen = () => {
     setQuoteModelOpen((prev) => !prev);
+  };
+
+  const handleFormSubmit = async (formData: FormData) => {
+    setIsSubmitting(true);
+    try {
+      await submitConsultationForm(formData);
+      modalOpen();
+      // You could show a success message here
+    } catch (error) {
+      console.error('Form submission error:', error);
+      // You could show an error message here
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -48,7 +64,6 @@ const Navbar = forwardRef<HTMLElement>((props, ref) => {
               : "bg-transparent"
             : "bg-primary-bg shadow-md"
         } w-full z-20 start-0`}
-        ref={ref}
       >
         <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-3">
           {/* logo */}
@@ -135,33 +150,40 @@ const Navbar = forwardRef<HTMLElement>((props, ref) => {
             <h1 className="text-center text-3xl font-bold text-red-500">
               Get Free Consultation
             </h1>
-            <form action="" className="mt-4">
-              <Input label="Name" type="text" name="Name" placeholder="Name" />
+            <form action={handleFormSubmit} className="mt-4">
+              <Input label="Name" type="text" name="Name" placeholder="Name" required />
               <Input
                 label="Email"
                 type="email"
                 name="Email"
                 placeholder="Email"
+                required
               />
               <Input
                 label="Phone"
                 type="text"
                 name="Phone"
                 placeholder="Phone"
+                required
               />
               <Input
                 label="Pincode"
                 type="text"
                 name="Pincode"
                 placeholder="Pincode"
+                required
               />
             </form>
             <p className="my-3">
-              <input type="checkbox" className="mr-4 cursor-pointer" />
+              <input type="checkbox" className="mr-4 cursor-pointer" required />
               By submitting this form, you agree to the privacy policy & terms
               and conditions
             </p>
-            <Button title="Submit" className="my-5" />
+            <Button 
+              title={isSubmitting ? "Submitting..." : "Submit"} 
+              className="my-5" 
+              disabled={isSubmitting}
+            />
             <RxCross2
               className="text-3xl absolute top-4 right-4 cursor-pointer"
               onClick={modalOpen}
@@ -171,6 +193,6 @@ const Navbar = forwardRef<HTMLElement>((props, ref) => {
       )}
     </>
   );
-});
+};
 
 export default Navbar;

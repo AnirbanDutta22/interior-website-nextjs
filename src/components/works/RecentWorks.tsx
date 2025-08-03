@@ -1,7 +1,27 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Card from "./Card";
-import recentworks from "../../../public/data/recentworks.json";
 import Link from "next/link";
+import { getRecentWorks } from "@/app/_lib/data";
+import LoadingSpinner from "@/components/LoadingSpinner";
+
+// Server component for recent works
+async function RecentWorksList() {
+  const recentworks = await getRecentWorks();
+  
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {recentworks.map((work: any, index: number) => (
+        <Card
+          key={index}
+          title={work.title}
+          description={work.description}
+          img_url={work.img_url}
+          link="/projects/recent-projects/1"
+        />
+      ))}
+    </div>
+  );
+}
 
 const RecentWorks = () => {
   return (
@@ -16,17 +36,9 @@ const RecentWorks = () => {
           Explore more {">"}
         </Link>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {recentworks.map((work, index) => (
-          <Card
-            key={index}
-            title={work.title}
-            description={work.description}
-            img_url={work.img_url}
-            link="/projects/recent-projects/1"
-          />
-        ))}
-      </div>
+      <Suspense fallback={<LoadingSpinner />}>
+        <RecentWorksList />
+      </Suspense>
     </section>
   );
 };

@@ -8,17 +8,25 @@ export default function Button({
   className,
   color,
   onClick,
+  disabled,
+  type = "button",
 }: {
   title?: Title;
   className?: string;
   color?: string;
+  onClick?: () => void;
+  disabled?: boolean;
+  type?: "button" | "submit" | "reset";
 }) {
   return (
     <button
-      type="button"
+      type={type}
       onClick={onClick}
+      disabled={disabled}
       className={`md:flex justify-center items-center text-white transition-all ease-in-out duration-150 bg-secondary-btn hover:bg-primary-btn-100
-      font-medium rounded-full text-sm px-6 py-3 text-center me-2 mb-2 capitalize ${className}`}
+      font-medium rounded-full text-sm px-6 py-3 text-center me-2 mb-2 capitalize ${className} ${
+        disabled ? 'opacity-50 cursor-not-allowed' : ''
+      }`}
     >
       {title}
     </button>

@@ -7,13 +7,15 @@ const Input = ({
   onChangeValue,
   type,
   placeholder,
+  required,
 }: {
   label: string;
   name: string;
-  value: string;
+  value?: string;
   type: string;
-  onChangeValue: ChangeEventHandler;
+  onChangeValue?: ChangeEventHandler;
   placeholder: string;
+  required?: boolean;
 }) => {
   return (
     <div className="flex flex-col gap-y-1.5 sm:gap-y-2.5">
@@ -27,8 +29,9 @@ const Input = ({
         type={type}
         id={name}
         name={name}
-        value={value}
+        value={value || ""}
         onChange={onChangeValue}
+        required={required}
         className="px-5 py-2 text-black text-base sm:text-lg border-1 border border-gray-300 focus:outline-1 focus:outline-gray-400"
         placeholder={placeholder}
       />

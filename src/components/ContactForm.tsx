@@ -1,6 +1,7 @@
 import React from "react";
 import Input, { TextArea } from "./form/Input";
 import Button from "./Button";
+import { submitContactForm } from "@/app/_lib/actions";
 
 const ContactForm = ({
   title,
@@ -16,13 +17,14 @@ const ContactForm = ({
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
         natus
       </p>
-      <form action="" className="mt-4">
-        <Input label="Name" type="text" name="Name" placeholder="Name" />
-        <Input label="Email" type="email" name="Email" placeholder="Email" />
-        <Input label="Phone" type="text" name="Phone" placeholder="Phone" />
+      <form action={submitContactForm} className="mt-4">
+        <Input label="Name" type="text" name="name" placeholder="Name" required />
+        <Input label="Email" type="email" name="email" placeholder="Email" required />
+        <Input label="Phone" type="text" name="phone" placeholder="Phone" required />
+        <Input label="Pincode" type="text" name="pincode" placeholder="Pincode" required />
         <TextArea />
+        <Button title="Submit" className="my-3" type="submit" />
       </form>
-      <Button title="Submit" className="my-3" />
     </div>
   );
 };

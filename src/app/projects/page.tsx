@@ -1,9 +1,45 @@
-import React from "react";
-import recentworks from "../../../public/data/recentworks.json";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import Card from "@/components/works/Card";
 import ContactForm from "@/components/ContactForm";
 import BudgetCalculator from "@/components/BudgetCalculator";
+import { getRecentWorks } from "../_lib/data";
+import LoadingSpinner from "@/components/LoadingSpinner";
+
+// Server component for project sections
+async function ProjectSection({ title, link }: { title: string; link: string }) {
+  const recentworks = await getRecentWorks();
+  
+  return (
+    <>
+      <div className="mt-10 flex justify-between items-center mb-3 text-xl">
+        <h2 className="my-6 text-lg sm:text-xl lg:text-2xl font-montserrat">
+          {title}
+        </h2>
+        <Link
+          href={link}
+          className="text-gray-500 hover:text-primary-btn"
+        >
+          Explore more {">"}
+        </Link>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {recentworks.map((work: any, index: number) => {
+          if (index < 4)
+            return (
+              <Card
+                key={index}
+                title={work.title}
+                description={work.description}
+                img_url={work.img_url}
+                link="/projects/recent-projects/1"
+              />
+            );
+        })}
+      </div>
+    </>
+  );
+}
 
 const Projects = () => {
   return (
@@ -14,83 +50,19 @@ const Projects = () => {
       </h1>
 
       {/* recent projects */}
-      <div className="flex justify-between items-center mb-3 text-xl">
-        <h2 className="my-6 text-lg sm:text-xl lg:text-2xl font-montserrat">
-          Recent Projects
-        </h2>
-        <Link
-          href="/projects/recent-projects"
-          className="text-gray-500 hover:text-primary-btn"
-        >
-          Explore more {">"}
-        </Link>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {recentworks.map((work, index) => {
-          if (index < 4)
-            return (
-              <Card
-                key={index}
-                title={work.title}
-                description={work.description}
-                img_url={work.img_url}
-                link="/projects/recent-projects/1"
-              />
-            );
-        })}
-      </div>
+      <Suspense fallback={<LoadingSpinner />}>
+        <ProjectSection title="Recent Projects" link="/projects/recent-projects" />
+      </Suspense>
+      
       {/* residential projects */}
-      <div className="mt-10 flex justify-between items-center mb-3 text-xl">
-        <h2 className="my-6 text-lg sm:text-xl lg:text-2xl font-montserrat">
-          Residential Projects
-        </h2>
-        <Link
-          href="/projects/recent-projects"
-          className="text-gray-500 hover:text-primary-btn"
-        >
-          Explore more {">"}
-        </Link>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {recentworks.map((work, index) => {
-          if (index < 4)
-            return (
-              <Card
-                key={index}
-                title={work.title}
-                description={work.description}
-                img_url={work.img_url}
-                link="/projects/recent-projects/1"
-              />
-            );
-        })}
-      </div>
+      <Suspense fallback={<LoadingSpinner />}>
+        <ProjectSection title="Residential Projects" link="/projects/recent-projects" />
+      </Suspense>
+      
       {/* commercial projects */}
-      <div className="mt-10 flex justify-between items-center mb-3 text-xl">
-        <h2 className="my-6 text-lg sm:text-xl lg:text-2xl font-montserrat">
-          Commercial Projects
-        </h2>
-        <Link
-          href="/projects/recent-projects"
-          className="text-gray-500 hover:text-primary-btn"
-        >
-          Explore more {">"}
-        </Link>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {recentworks.map((work, index) => {
-          if (index < 4)
-            return (
-              <Card
-                key={index}
-                title={work.title}
-                description={work.description}
-                img_url={work.img_url}
-                link="/projects/recent-projects/1"
-              />
-            );
-        })}
-      </div>
+      <Suspense fallback={<LoadingSpinner />}>
+        <ProjectSection title="Commercial Projects" link="/projects/recent-projects" />
+      </Suspense>
     </section>
   );
 };
